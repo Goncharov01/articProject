@@ -15,7 +15,7 @@ class ProfileEditViewModel @Inject constructor(
     private val sharedPreferencesHelper: SharedPreferencesHelper
 ) : BaseViewModel() {
 
-    fun checkValidAndSaveData(name: String, lastName: String) {
+    fun checkValidAndSaveData(name: String, lastName: String, dateOfBirth: String) {
         if (name.length !in 2..20) {
             sendError(context.getString(R.string.check_entered_name))
             return
@@ -24,9 +24,14 @@ class ProfileEditViewModel @Inject constructor(
             sendError(context.getString(R.string.check_entered_last_name))
             return
         }
+        if (dateOfBirth.isEmpty()) {
+            sendError(context.getString(R.string.check_entered_date_of_birth))
+            return
+        }
 
         sharedPreferencesHelper.userName = name
         sharedPreferencesHelper.userLastName = lastName
+        sharedPreferencesHelper.dateOfBirth = dateOfBirth
 
         success()
     }

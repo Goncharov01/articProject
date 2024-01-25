@@ -8,7 +8,10 @@ import com.example.goncharov1.R
 import com.example.goncharov1.databinding.FragmentProfileEditBinding
 import com.example.goncharov1.ui.base.BaseFragment
 import com.example.goncharov1.viewmodels.ProfileEditViewModel
+import com.google.android.material.datepicker.MaterialDatePicker
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.SimpleDateFormat
+import java.util.Date
 
 @AndroidEntryPoint
 class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit) {
@@ -19,12 +22,18 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnSave.setOnClickListener {
-            saveUserData()
-        }
+        binding.apply {
+            btnSave.setOnClickListener {
+                saveUserData()
+            }
 
-        binding.toolbar.setNavigationOnClickListener {
-            goBack()
+            toolbar.setNavigationOnClickListener {
+                goBack()
+            }
+
+            dateOfBirth.setOnClickListener {
+                showDataPicker()
+            }
         }
     }
 
@@ -32,12 +41,31 @@ class ProfileEditFragment : BaseFragment(R.layout.fragment_profile_edit) {
         binding.apply {
             val name = edName.text.trim().toString()
             val lastName = edLastName.text.trim().toString()
+            val dateOfBirth = dateOfBirth.text.trim().toString()
 
-            viewModel.checkValidAndSaveData(name = name, lastName = lastName)
+            viewModel.checkValidAndSaveData(
+                name = name,
+                lastName = lastName,
+                dateOfBirth = dateOfBirth
+            )
         }
+    }
+
+    private fun showDataPicker() {
+        val dataPicker = MaterialDatePicker.Builder.datePicker()
+            .setTitleText(getString(R.string.select_date_birth))
+            .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+            .build()
+
+        dataPicker.addOnPositiveButtonClickListener {
+            binding.dateOfBirth.text =
+                SimpleDateFormat(getString(R.string.date_format)).format(Date(it))
+        }
+        dataPicker.show(childFragmentManager, "DataPicker")
     }
 
     override fun success() {
         showToast(requireContext().getString(R.string.data_saved))
+        goBack()
     }
 }

@@ -17,5 +17,8 @@
     <string name="data_saved">Data saved successfully</string>
     <string name="save">Save</string>
     <string name="check_entered_name">Check your entered name</string>
-    <string name="check_entered_last_name">Check your entered name</string>
+    <string name="check_entered_last_name">Check your entered last name</string>
+    <string name="check_entered_date_of_birth">Check your entered date of birth</string>
+    <string name="select_date_birth">Select date of birth</string>
+    <string name="date_format">dd MMM yyyy</string>
 </resources>

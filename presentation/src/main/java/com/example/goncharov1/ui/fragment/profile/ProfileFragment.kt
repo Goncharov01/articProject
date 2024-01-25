@@ -41,6 +41,7 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
         if (sharedPreferencesHelper.userName != getString(R.string.unknown)) {
             binding.name.text = sharedPreferencesHelper.userName
             binding.lastName.text = sharedPreferencesHelper.userLastName
+            binding.dateOfBirth.text = sharedPreferencesHelper.dateOfBirth
         }
     }
 }
