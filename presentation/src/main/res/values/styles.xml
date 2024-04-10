@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Button -->
+    <style name="Goncharov1.TextButton" parent="Widget.Material3.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="minHeight">@dimen/text_button_height</item>
+        <item name="cornerRadius">@dimen/corner_radius_100</item>
+        <item name="android:textAppearance">@style/Goncharov1.TextAppearance.Label1</item>
+    </style>
+
+    <!-- EditText -->
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:paddingStart">@dimen/padding_10</item>
+        <item name="android:paddingEnd">@dimen/padding_10</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+
+    <!--Text Appearance-->
+    <style name="Goncharov1.TextAppearance.Label1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+    </style>
+
+</resources>
