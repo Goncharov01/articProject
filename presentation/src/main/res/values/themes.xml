@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.Goncharov1" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -12,16 +12,6 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-    </style>
-
-
-    <!-- EditText -->
-    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
-        <item name="android:background">@drawable/edit_text_background</item>
-        <item name="android:paddingStart">10dp</item>
-        <item name="android:paddingEnd">10dp</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:textSize">14sp</item>
     </style>
 
 </resources>

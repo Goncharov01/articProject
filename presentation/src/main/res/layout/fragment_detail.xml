@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:background="@color/grey"
         android:minHeight="?attr/actionBarSize"
-        android:paddingStart="8dp"
+        android:paddingStart="@dimen/padding_8"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
             android:layout_gravity="center"
             android:fontFamily="sans-serif-black"
             android:text="@string/detail"
-            android:textSize="20sp" />
+            android:textSize="@dimen/text_size_20" />
     </com.example.goncharov1.customview.CustomToolBarView>
 
     <LinearLayout
@@ -40,20 +40,20 @@
             android:id="@+id/text_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
+            android:layout_margin="@dimen/margin_12"
             android:fontFamily="sans-serif-medium"
             android:gravity="start"
-            android:textSize="22sp"
+            android:textSize="@dimen/text_size_20"
             tools:text="@string/text_example" />
 
         <TextView
             android:id="@+id/text_artistDisplay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
+            android:layout_margin="@dimen/margin_12"
             android:fontFamily="sans-serif-medium"
             android:gravity="start"
-            android:textSize="22sp"
+            android:textSize="@dimen/text_size_20"
             tools:text="@string/text_example" />
     </LinearLayout>
 

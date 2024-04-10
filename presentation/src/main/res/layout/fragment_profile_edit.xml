@@ -22,16 +22,16 @@
             android:layout_gravity="center"
             android:fontFamily="sans-serif-black"
             android:text="@string/profile_edit"
-            android:textSize="20sp" />
+            android:textSize="@dimen/text_size_20" />
 
     </com.example.goncharov1.customview.CustomToolBarView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="@dimen/margin_32"
+        android:layout_marginTop="@dimen/margin_32"
+        android:layout_marginEnd="@dimen/margin_32"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,8 +41,8 @@
             android:id="@+id/ed_name"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="@dimen/line_height_40"
+            android:layout_marginTop="@dimen/margin_12"
             android:autofillHints="name"
             android:ems="11"
             android:gravity="center"
@@ -53,8 +53,8 @@
             android:id="@+id/ed_last_name"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="@dimen/line_height_40"
+            android:layout_marginTop="@dimen/margin_12"
             android:autofillHints="name"
             android:ems="11"
             android:gravity="center"
@@ -65,8 +65,8 @@
             android:id="@+id/date_of_birth"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="32dp"
+            android:layout_height="@dimen/line_height_40"
+            android:layout_marginTop="@dimen/margin_32"
             android:focusable="false"
             android:gravity="center"
             android:hint="@string/date_of_birth"
@@ -74,13 +74,14 @@
 
     </LinearLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_save"
+        style="@style/Goncharov1.TextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginStart="@dimen/margin_8"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_60"
         android:text="@string/save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
