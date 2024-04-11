@@ -8,7 +8,6 @@ import com.example.goncharov1.R
 import com.example.goncharov1.databinding.FragmentProfileBinding
 import com.example.goncharov1.ui.base.BaseFragment
 import com.example.goncharov1.utils.SharedPreferencesHelper
-import com.example.goncharov1.viewmodels.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.scopes.FragmentScoped
 import javax.inject.Inject
@@ -28,12 +27,13 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
 
         initData()
 
-        binding.toolbar.setNavigationOnClickListener {
-            goBack()
-        }
-
-        binding.edit.setOnClickListener {
-            ProfileFragmentDirections.actionProfileFragmentToProfileEditFragment().navigate()
+        with(binding) {
+            toolbar.setNavigationOnClickListener {
+                goBack()
+            }
+            edit.setOnClickListener {
+                ProfileFragmentDirections.actionProfileFragmentToProfileEditFragment().navigate()
+            }
         }
     }
 

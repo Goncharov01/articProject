@@ -1,31 +1,29 @@
-package com.example.goncharov1.viewmodels
+package com.example.goncharov1.ui.fragment.profile.edit
 
-import android.content.Context
 import com.example.goncharov1.R
 import com.example.goncharov1.ui.base.BaseViewModel
+import com.example.goncharov1.utils.ResourcesManager
 import com.example.goncharov1.utils.SharedPreferencesHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
 @HiltViewModel
 class ProfileEditViewModel @Inject constructor(
-    @ApplicationContext
-    private val context: Context,
-    private val sharedPreferencesHelper: SharedPreferencesHelper
+    private val resourcesManager: ResourcesManager,
+    private val sharedPreferencesHelper: SharedPreferencesHelper,
 ) : BaseViewModel() {
 
     fun checkValidAndSaveData(name: String, lastName: String, dateOfBirth: String) {
         if (name.length !in 2..20) {
-            sendError(context.getString(R.string.check_entered_name))
+            sendError(resourcesManager.string(R.string.check_entered_name))
             return
         }
         if (lastName.length !in 2..20) {
-            sendError(context.getString(R.string.check_entered_last_name))
+            sendError(resourcesManager.string(R.string.check_entered_last_name))
             return
         }
         if (dateOfBirth.isEmpty()) {
-            sendError(context.getString(R.string.check_entered_date_of_birth))
+            sendError(resourcesManager.string(R.string.check_entered_date_of_birth))
             return
         }
 

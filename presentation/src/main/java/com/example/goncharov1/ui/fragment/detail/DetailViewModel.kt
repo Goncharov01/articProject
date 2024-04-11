@@ -1,4 +1,4 @@
-package com.example.goncharov1.viewmodels
+package com.example.goncharov1.ui.fragment.detail
 
 import android.graphics.drawable.Drawable
 import android.util.Log
@@ -8,7 +8,6 @@ import com.bumptech.glide.RequestBuilder
 import com.example.goncharov1.data.utils.DownloadImageLoader
 import com.example.goncharov1.domain.getartic.GetArticUseCase
 import com.example.goncharov1.ui.base.BaseViewModel
-import com.example.goncharov1.ui.fragment.detail.DetailFragmentArgs
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow

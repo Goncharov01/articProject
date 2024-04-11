@@ -21,4 +21,5 @@
     <string name="check_entered_date_of_birth">Check your entered date of birth</string>
     <string name="select_date_birth">Select date of birth</string>
     <string name="date_format">dd MMM yyyy</string>
+    <string name="tag_data_picker">DataPicker</string>
 </resources>

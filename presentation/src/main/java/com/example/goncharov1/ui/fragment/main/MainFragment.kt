@@ -12,7 +12,6 @@ import com.example.goncharov1.domain.entity.ArticEntity
 import com.example.goncharov1.ui.base.BaseFragment
 import com.example.goncharov1.ui.recycler.ArticListAdapter
 import com.example.goncharov1.ui.recycler.RecyclerViewClickListener
-import com.example.goncharov1.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.scopes.FragmentScoped
 import kotlinx.coroutines.flow.collectLatest
@@ -35,7 +34,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main), RecyclerViewClickList
 
         initAdapterAndViewModel()
 
-        lifecycleScope.launchWhenCreated {
+        viewLifecycleOwner.lifecycleScope.launchWhenCreated {
             viewModel.articListFlow().collectLatest {
                 articListAdapter.submitData(it)
             }

@@ -1,4 +1,4 @@
-package com.example.goncharov1.viewmodels
+package com.example.goncharov1.ui.fragment.main
 
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
